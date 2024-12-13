@@ -57,8 +57,8 @@ export const TodoContent = () => {
     <Container
       sx={{
         backgroundColor: 'lightBlue',
-        borderRadius: '10px',
-        padding: '10px',
+        borderRadius: 2,
+        padding: 2.5,
       }}
     >
       {filteredTodos.length > 0 ? (
