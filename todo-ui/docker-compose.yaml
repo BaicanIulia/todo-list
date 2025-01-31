@@ -8,15 +8,8 @@ services:
       - '3000:3000'
     networks:
       - todo-list-network
-    develop:
-      watch:
-        - action : sync
-          path: .
-          target: /app
-          ignore:
-            - node_modules
-        - action: rebuild
-          path: package.json
+    volumes:
+      - .:/app:rw,cached
 
 networks:
   todo-list-network:
