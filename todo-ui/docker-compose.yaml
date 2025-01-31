@@ -8,6 +8,8 @@ services:
       - '3000:3000'
     networks:
       - todo-list-network
+    volumes:
+      - .:/app:rw,cached
 
 networks:
   todo-list-network:

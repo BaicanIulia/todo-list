@@ -8,6 +8,8 @@ services:
       - "27017:27017"
     networks:
       - todo-list-network
+    volumes:
+      - mongodb-data:/data/db
 
   backend:
     build: .
@@ -20,8 +22,14 @@ services:
       - mongodb
     networks:
       - todo-list-network
+    volumes:
+      - .:/app:rw,cached
+      - /app/node_modules
 
 networks:
   todo-list-network:
     name: todo-list-network
+
+volumes:
+  mongodb-data: {}
  
